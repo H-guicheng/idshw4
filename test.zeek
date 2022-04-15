@@ -14,8 +14,8 @@ event zeek_init()
                     	local t1 = result["404.lookup"];
                     	local t2 = result["404.uniq.lookup"];
                    		local t3 = result["connection.lookup"];
-                        local p1:double=(t3$sum)/(t3$sum);
-                        local p2:double=((t2$unique)-1)/t3$sum;
+                        local p1:double=(t1$sum)/(t3$sum);
+                        local p2:double=((t2$unique)-1)/t1$sum;
                         if (t1$sum>2&&p1>0.2&&p2>0.5) 
                         {
                                 print fmt("%s is a scanner with %.0f scan attemps on %d urls",key$host,t1$sum,(t2$unique)-1);
